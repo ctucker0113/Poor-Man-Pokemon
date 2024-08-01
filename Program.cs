@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to Poor Man Pokemon! A text-based adventure awaits you!");
 
 DisplayMenu();
 
@@ -7,32 +6,34 @@ void DisplayMenu()
 {
     while (true)
     {
-        Console.WriteLine(@"Choose Your Starter Pokemon!
-a.) Bulbasaur
-b.) Charmander
-c.) Squirtle
-d.) Pikachu");
+        Console.WriteLine(@"Welcome to Poor Man Pokemon! A text-based adventure awaits you!
+a.) New Game
+b.) Load Game
+c.) Exit");
 
         string userMenuChoice = Console.ReadLine().Trim().ToLower();
 
         if (userMenuChoice == "a")
         {
-            Console.WriteLine("You selected Bulbasaur!");
+            Console.WriteLine("You selected 'New Game'!");
         }
 
-        if (userMenuChoice == "b")
+        else  if (userMenuChoice == "b")
         {
-            Console.WriteLine("You selected Charmander!");
+            Console.WriteLine("You selected 'Load Game!'");
         }
 
-        if (userMenuChoice == "c")
+        else if (userMenuChoice == "c")
         {
-            Console.WriteLine("You selected Squirtle!");
+            Console.WriteLine("You selected Exit! Goodbye!");
+            break;
         }
 
-        if (userMenuChoice == "d")
+        else
         {
-            Console.WriteLine("You selected Pikachu!");
+            Console.WriteLine(userMenuChoice);
+            Console.Clear();
+            Console.WriteLine("Invalid Option. Please select a valid option.");
         }
     }
 }
